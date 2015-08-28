@@ -31,12 +31,12 @@ optional arguments:
 
 ###server mode
 ```
-java -jar kaze-proxy.jar -m server -p 12345
+java -jar kazeproxy.jar -m server -p 12345
 ```
 
 ###client mode
 ```
-java -jar kaze-proxy.jar -m client -p 8888 -server-ip `your.server.host` -server-port `12345`
+java -jar kazeproxy.jar -m client -p 8888 -server-ip `your.server.host` -server-port `12345`
 ```
 
 
