@@ -21,7 +21,7 @@ import org.littleshoot.proxy.SslEngineSource;
  * file doesn't yet exist.
  */
 public class KazeSslEngineSource implements SslEngineSource {
-    private String PASSWORD = "Be Your Own Lantern";
+    private String PASSWORD;
     private final String PROTOCOL = "TLS";
     private final String keyStoreFile;
     private final String trustKeyStoreFile;
@@ -74,8 +74,9 @@ public class KazeSslEngineSource implements SslEngineSource {
                     .getInstance(algorithm);
 
             final KeyStore tks = KeyStore.getInstance("JKS");
-            tks.load(KazeSslEngineSource.class.getResourceAsStream("/"
-                    + trustKeyStoreFile), PASSWORD.toCharArray());
+            tks.load(
+                    KazeSslEngineSource.class.getResourceAsStream("/"
+                            + trustKeyStoreFile), PASSWORD.toCharArray());
 
             tmf.init(tks);
 

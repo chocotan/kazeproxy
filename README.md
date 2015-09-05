@@ -8,35 +8,36 @@ mvn clean package assembly:assembly
 ```
 
 
-##Run
-
+##Configurations
+###Server mode
 ```
-usage:  [-h] [-m mode] [-p PORT] [-ip HOST] [-server-ip SERVER HOST] [-server-port SERVER PORT] [-pw KEYSTORE PW]
+##Proxy model
+mode=server
 
-Kaze Proxy
+##Ip and Port to bind
+ip=0.0.0.0
+port=12345
 
-optional arguments:
-  -h, --help             show this help message and exit
-  -m mode, --mode mode   Server or client model
-  -p PORT, --port PORT   Http port to listen on
-  -ip HOST, --host HOST  Ip address to listen on
-  -server-ip SERVER HOST, --remort-host SERVER HOST
-                         Server ip
-  -server-port SERVER HOST, --remote-port SERVER PORT
-                         Server port
-  -pw KEYSTORE PW, --jks-passwd KEYSTORE PW
-                         keystore password
-
+keystore.pw=kaze-proxy
 ```
+###Client mode
+```
+##Proxy model
+mode=client
 
-###server mode
-```
-java -jar kazeproxy.jar -m server -p 12345
-```
+##Ip and Port to bind
+ip=0.0.0.0
+port=8888
 
-###client mode
-```
-java -jar kazeproxy.jar -m client -p 8888 -server-ip `your.server.host` -server-port `12345`
+server-ip=your.server.com
+server-port=12345
+
+##Cache
+cache=false
+##Regex url using cache
+cache.regex=
+
+keystore.pw=kaze-proxy
 ```
 
 
@@ -57,3 +58,7 @@ keytool -import -alias clientkey -file client.crt -keystore tserver.jks
 ```
 You'd better use the same password for the keystore and cert files.
 
+## LICENSE
+Kazeproxy is under Apache License Version 2.0
+
+For the purposes of licensing: JxBrowser library is not part of Kazeproxy, but it is a proprietary software. The use of JxBrowser is governed by JxBrowser Product Licence Agreement. If you would like to use JxBrowser in your development, please contact TeamDev team: teamdev.com/jxbrowser
