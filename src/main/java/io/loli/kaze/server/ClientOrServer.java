@@ -32,7 +32,7 @@ public class ClientOrServer {
                     .getProperty("server-port"));
             Integer port = prop.getProperty("port") == null ? 12345 : Integer
                     .parseInt(prop.getProperty("port"));
-            new KazeClient().mode(mode).port(port).serverIp(serverIp)
+            new KazeProxy().mode(mode).port(port).serverIp(serverIp)
                     .serverPort(serverPort).cache(cache)
                     .filter(new CacheFilter(cacheRegex)).password(pw).start();
 

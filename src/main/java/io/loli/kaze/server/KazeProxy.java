@@ -19,7 +19,7 @@ import org.littleshoot.proxy.SslEngineSource;
 import org.littleshoot.proxy.TransportProtocol;
 import org.littleshoot.proxy.impl.DefaultHttpProxyServer;
 
-public class KazeClient {
+public class KazeProxy {
     private String jkspw;
     private String serverIp;
     private Integer serverPort;
@@ -73,37 +73,37 @@ public class KazeClient {
         };
     }
 
-    public KazeClient port(int port) {
+    public KazeProxy port(int port) {
         this.port = port;
         return this;
     }
 
-    public KazeClient serverIp(String serverIp) {
+    public KazeProxy serverIp(String serverIp) {
         this.serverIp = serverIp;
         return this;
     }
 
-    public KazeClient serverPort(Integer serverPort) {
+    public KazeProxy serverPort(Integer serverPort) {
         this.serverPort = serverPort;
         return this;
     }
 
-    public KazeClient password(String password) {
+    public KazeProxy password(String password) {
         this.jkspw = password;
         return this;
     }
 
-    public KazeClient cache(Boolean cache) {
+    public KazeProxy cache(Boolean cache) {
         this.cache = cache;
         return this;
     }
 
-    public KazeClient filter(CacheFilter filter) {
+    public KazeProxy filter(CacheFilter filter) {
         this.filter = filter;
         return this;
     }
 
-    public KazeClient mode(String mode) {
+    public KazeProxy mode(String mode) {
         this.mode = mode;
         return this;
     }
@@ -128,15 +128,12 @@ public class KazeClient {
                     .withTransportProtocol(TransportProtocol.TCP)
                     .withSslEngineSource(sslEngineSource)
                     .withAuthenticateSslClients(false);
-            if (cache) {
-                boot = boot.withFiltersSource(filter);
-            }
         }
         boot.start();
         System.in.read();
     }
 
-    public KazeClient withFilter(CacheFilter cacheFilter) {
+    public KazeProxy withFilter(CacheFilter cacheFilter) {
         this.filter = cacheFilter;
         return this;
     }
