@@ -2,14 +2,16 @@ kazeproxy
 ========
 An encrypted TCP chained proxy using LittleProxy
 
+
 ##Build
 ```
 mvn clean package assembly:assembly
 ```
 
 
-##Configurations
-###Server mode
+##Modules
+###Proxy
+####Server mode
 ```
 ##Proxy model
 mode=server
@@ -32,16 +34,11 @@ port=8888
 server-ip=your.server.com
 server-port=12345
 
-##Cache
-cache=false
-##Regex url using cache
-cache.regex=
-
 keystore.pw=kaze-proxy
 ```
 
 
-##KeyStore
+####KeyStore
 
 You should add `-pw password` param to the command above while using your own keystores.
 
