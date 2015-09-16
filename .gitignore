@@ -64,4 +64,4 @@ node_modules
 
 hs_err*
 lib/*
-kazeproxy-cache/*
+*/kazeproxy-cache/*

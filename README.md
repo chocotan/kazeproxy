@@ -22,7 +22,7 @@ port=12345
 
 keystore.pw=kaze-proxy
 ```
-###Client mode
+####Client mode
 ```
 ##Proxy model
 mode=client
