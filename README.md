@@ -10,7 +10,7 @@ mvn clean package assembly:assembly
 
 
 ##Modules
-###Proxy
+###1. Proxy
 ####Server mode
 ```
 ##Proxy model
@@ -54,6 +54,21 @@ keytool -import -alias serverkey -file server.crt -keystore tclient.jks
 keytool -import -alias clientkey -file client.crt -keystore tserver.jks
 ```
 You'd better use the same password for the keystore and cert files.
+
+
+### 2. TunnelRedirectServer
+Two files in this module was modified from the example in grizzly-framework.
+
+https://github.com/GrizzlyNIO/grizzly-mirror/blob/2.3.x/samples/framework-samples/src/main/java/org/glassfish/grizzly/samples/tunnel/TunnelServer.java
+
+####Build and run
+```
+mvn clean package
+java -jar kaze-redirect-x.y.z.jar target.host.ip target.host.port localhost.ip localhost.port
+```
+
+
+
 
 ## LICENSE
 Kazeproxy is under Apache License Version 2.0
