@@ -40,9 +40,6 @@ keystore.pw=kaze-proxy
 
 ####KeyStore
 
-You should add `-pw password` param to the command above while using your own keystores.
-
-
 Commands below show you how to generate your keystores.
 
 ```
