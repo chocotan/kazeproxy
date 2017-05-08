@@ -3,15 +3,15 @@ kazeproxy
 An encrypted TCP chained proxy using LittleProxy
 
 
-##Build
+## Build
 ```
 mvn clean package assembly:assembly
 ```
 
 
-##Modules
-###1. Proxy
-####Server mode
+## Modules
+### 1. Proxy
+#### Server mode
 ```
 ##Proxy model
 mode=server
@@ -22,7 +22,7 @@ port=12345
 
 keystore.pw=kaze-proxy
 ```
-####Client mode
+#### Client mode
 ```
 ##Proxy model
 mode=client
@@ -38,7 +38,7 @@ keystore.pw=kaze-proxy
 ```
 
 
-####KeyStore
+#### KeyStore
 
 Commands below show you how to generate your keystores.
 
@@ -58,7 +58,7 @@ Two files in this module was modified from the example in grizzly-framework.
 
 https://github.com/GrizzlyNIO/grizzly-mirror/blob/2.3.x/samples/framework-samples/src/main/java/org/glassfish/grizzly/samples/tunnel/TunnelServer.java
 
-####Build and run
+#### Build and run
 ```
 mvn clean package
 java -jar kaze-redirect-x.y.z.jar target.host.ip target.host.port localhost.ip localhost.port
